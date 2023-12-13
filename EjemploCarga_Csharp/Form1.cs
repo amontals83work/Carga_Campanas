@@ -186,7 +186,7 @@ namespace EjemploCarga_Csharp
                     }
                 default:
                     {
-                        MessageBox.Show("Camapaña no contemplada");
+                        MessageBox.Show("Campaña no contemplada");
                         break;
                     }
             }
