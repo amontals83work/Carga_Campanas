@@ -30,7 +30,7 @@ namespace EjemploCarga_Csharp
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            cboCartera.DataSource = conn.Select("SELECT idCliente, Descripcion FROM clientes WHERE idcliente IN (41, 81, 83, 84, 85, 86, 87, 88, 89) ORDER BY Nombre");
+            cboCartera.DataSource = conn.Select("SELECT idCliente, Descripcion FROM clientes WHERE idcliente IN (41, 81, 83, 84, 85, 86, 87, 89, 90) union SELECT -81, 'CRISALIDA II' FROM clientes WHERE 1=1");
             cboCartera.DisplayMember = "Descripcion";
             cboCartera.ValueMember = "idCliente";
         }
@@ -86,102 +86,109 @@ namespace EjemploCarga_Csharp
 
             switch (id)
             {
-                case 4023://AXACAMPANACOMODIN
+                case 4023://AXACTOR - COMODIN 1
                     {
                         tabla = "AXACAMPANACOMODIN";
                         campo = "Idclienteald";
                         Inserciones_AXACTOR(dt, tabla, campo);
                         break;
                     }
-                case 4067://AXACAMPANACOMODIN2
+                case 4067://AXACTOR - COMODIN 2
                     {
                         tabla = "AXACAMPANACOMODIN2";
                         campo = "Idclienteald";
                         Inserciones_AXACTOR(dt, tabla, campo);
                         break;
                     }
-                case 4107://AXACAMPANACONTACTO
+                case 4107://AXACTOR - CONTACTO
                     {
                         tabla = "AXACAMPANACONTACTO";
                         campo = "Idclienteald";
                         Inserciones_AXACTOR(dt, tabla, campo);
                         break;
                     }
-                case 4051://TEIDECAMPANACOMODIN -
+                case 4051://TEIDE - COMODIN TEIDE
                     {
                         tabla = "TEIDECAMPANACOMODIN";
                         campo = "ref";
                         Inserciones_ARBORKNOT_TDX(dt, tabla, campo);
                         break;
                     }
-                case 4066://TDXCAMPANACOMODIN
+                case 4066://TDX - COMODIN
                     {
                         tabla = "TDXCAMPANACOMODIN"; 
-                        campo = "idexpediente";
+                        campo = "idExpediente";
                         Inserciones_ARBORKNOT_TDX(dt, tabla, campo);
                         break;
                     }
-                case 4075://BENKICAMPANACOMODIN -
+                case 4075://BENKI - COMODIN BENKI
                     {
                         tabla = "BENKICAMPANACOMODIN";
                         campo = "EXPEDIENTE";
                         Inserciones_ARBORKNOT_TDX(dt, tabla, campo);
                         break;
                     }
-                case 4083://TEIDECAMPANASINAP -
+                case 4083://TEIDE - CONTACTADO SIN AP
                     {
                         tabla = "TEIDECAMPANASINAP";
                         campo = "ref";
                         Inserciones_ARBORKNOT_TDX(dt, tabla, campo);
                         break;
                     }
-                case 4095://CRISALIDACAMPANACOMODIN -
+                case 4095://CRISALIDA - COMODIN CRISALIDA
                     {
                         tabla = "CRISALIDACAMPANACOMODIN"; 
                         campo = "EXPEDIENTE";
                         Inserciones_ARBORKNOT_TDX(dt, tabla, campo);
                         break;
                     }
-                case 4096://FINTYACAMPANACOMODIN -
+                case 4096://FINTYA - COMODIN FYNTIA
                     {
                         tabla = "FINTYACAMPANACOMODIN";
                         campo = "REFERENCIA";
                         Inserciones_ARBORKNOT_TDX(dt, tabla, campo);
                         break;
                     }
-                case 4103://ARBORKNOTGLOBALIN - 
+                case 4103://BENKI - GLOBAL INCUMPLIDOS
                     {
                         tabla = "ARBORKNOTGLOBALIN";
                         campo = "EXPEDIENTE";
                         Inserciones_ARBORKNOT_TDX(dt, tabla, campo);
                         break;
                     }
-                case 4105://NASSAUCAMPANACOMODIN
+                case 4105://NASSAU - COMODIN NASSAU
                     {
                         tabla = "NASSAUCAMPANACOMODIN";
                         campo = "CONTRATO";
                         Inserciones_NASSAU(dt, tabla, campo);
                         break;
                     }
-                case 4114://teidecampanasinap_1 - 
+                case 4114://TEIDE - CTO SIN AP_1
                     {
                         tabla = "teidecampanasinap_1";
                         campo = "ref";
                         Inserciones_ARBORKNOT_TDX(dt, tabla, campo);
                         break;
                     }
-                case 4115://teidecampanasinap_2 - 
+                case 4115://TEIDE - CTO SIN AP_2
                     {
                         tabla = "teidecampanasinap_2";
                         campo = "ref";
                         Inserciones_ARBORKNOT_TDX(dt, tabla, campo);
                         break;
                     }
-                case 4128://PagantisCampanaComodin
+                case 4128://PAGANTIS - COMODIN PAGANTIS
                     {
                         tabla = "PagantisCampanaComodin";
                         campo = "IdExpediente";
                         Inserciones_ARBORKNOT_TDX(dt, tabla, campo);
+                        break;
+                    }
+                case 4130://AXACTOR - COMODIN CRISALIDA 2
+                    {
+                        tabla = "CRISALIDA2CAMPANACOMODIN";
+                        campo = "Idclienteald";
+                        Inserciones_AXACTOR(dt, tabla, campo);
                         break;
                     }
                 default:
