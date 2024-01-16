@@ -184,7 +184,7 @@ namespace EjemploCarga_Csharp
                         Inserciones_ARBORKNOT_TDX(dt, tabla, campo);
                         break;
                     }
-                case 4130://AXACTOR - COMODIN CRISALIDA 2
+                case 4130://AXACTOR - COMODIN CRISALIDA 3
                     {
                         tabla = "CRISALIDA2CAMPANACOMODIN";
                         campo = "Idclienteald";
