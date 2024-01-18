@@ -187,8 +187,8 @@ namespace EjemploCarga_Csharp
                 case 4130://AXACTOR - COMODIN CRISALIDA 3
                     {
                         tabla = "CRISALIDA2CAMPANACOMODIN";
-                        campo = "Idclienteald";
-                        Inserciones_AXACTOR(dt, tabla, campo);
+                        campo = "Expediente";
+                        Inserciones_ARBORKNOT_TDX(dt, tabla, campo);
                         break;
                     }
                 default:
