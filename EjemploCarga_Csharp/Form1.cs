@@ -191,6 +191,13 @@ namespace EjemploCarga_Csharp
                         Inserciones_ARBORKNOT_TDX(dt, tabla, campo);
                         break;
                     }
+                case 4137://TDX - COMODIN 2
+                    {
+                        tabla = "TDXCAMPANACOMODIN2";
+                        campo = "idExpediente";
+                        Inserciones_ARBORKNOT_TDX(dt, tabla, campo);
+                        break;
+                    }
                 default:
                     {
                         MessageBox.Show("Campaña no contemplada");
@@ -214,12 +221,12 @@ namespace EjemploCarga_Csharp
                 if (!string.IsNullOrEmpty(expediente))
                 {
                     if (dt.Columns.Contains("Expediente")) mcComm.CommandText = "SELECT idExpediente FROM Expedientes WHERE Expediente=@expediente OR RefCliente=@expediente";
-                    else if (dt.Columns.Contains("REFCLIENTE")) mcComm.CommandText = "SELECT idExpediente FROM Expedientes WHERE cast(Expediente as varchar)=@expediente OR RefCliente=@expediente";                
+                    else if (dt.Columns.Contains("REFCLIENTE")) mcComm.CommandText = "SELECT idExpediente FROM Expedientes WHERE RefCliente=@expediente"; //WHERE cast(Expediente as varchar)=@expediente OR 
                     mcComm.command.Parameters.AddWithValue("@expediente", expediente);
                 }
 
-                int result = Convert.ToInt32(mcComm.ExecuteScalar());
-                if (result != null)
+                string result = mcComm.ExecuteScalar().ToString();
+                if (result != "")
                 {
                     mcComm.command.CommandText = "INSERT INTO " + tabla + " (" + campo + ") VALUES (@value)";
                     mcComm.command.Parameters.Clear();
